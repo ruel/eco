@@ -42,7 +42,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .parallax-window {
-  padding: 200px 0px 100px;
+  padding: 180px 0px 100px;
   min-height: 500px;
   background: transparent;
   color: white;
@@ -159,6 +159,16 @@ a.btn-trans-blk  {
 
 .text-color-lg {
   color: #999;
+}
+
+#section-1 {
+  padding: 50px 50px;
+  text-align: center;
+}
+
+#section-2 {
+  padding: 100px 20px;
+  text-align: center;
 }
 
 @media screen and (max-width: 767px) {
