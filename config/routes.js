@@ -15,6 +15,7 @@ module.exports.routes = {
   'get /projects/browse': 'Project.browse',
   'get /projects/add': 'Project.getAdd',
   'get /projects/:project': 'Project.get',
+  'get /projects/:project/fund': 'Project.fund',
   'post /projects/add': 'Project.postAdd',
 
 };
