@@ -40,6 +40,10 @@ module.exports = {
       required: true
     },
 
+    level: {
+      model: 'level'
+    },
+
     projects: {
       collection: 'project',
       via: 'owner'
