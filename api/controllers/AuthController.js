@@ -55,4 +55,40 @@ module.exports = {
     })(req, res, next);
   },
 
+  getLogin: function(req, res) {
+    res.view('login');
+  },
+
+  postLogin: function(req, res) {
+    passport.authenticate('local', function(err, user, info) {
+      if (err) {
+        sails.log.error(err);
+        return res.serverError();
+      }
+
+      if (!user) {
+        return res.view('login', {
+          error: info
+        });
+      }
+
+      req.logIn(user, function(err) {
+        if (err) {
+          sails.log.error(err);
+          return res.serverError();
+        }
+
+        res.redirect('/');
+      });
+    })(req, res);
+  },
+
+  logout: function(req, res) {
+    req.logout();
+    req.session.destroy(function(err) {
+      if (err) sails.log.error(err);
+      return res.redirect('/');
+    });
+  },
+
 };
