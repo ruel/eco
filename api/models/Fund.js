@@ -21,7 +21,9 @@ module.exports = {
   },
 
   sum: function(id, name, callback) {
-    var query[name] = id;
+    var query = {};
+    query[name] = id;
+
     Fund.find(query, function(err, funds) {
       if (err) return callback(err);
 
