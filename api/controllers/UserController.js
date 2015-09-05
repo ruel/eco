@@ -1,7 +1,7 @@
 module.exports = {
 
   getUser: function(req, res) {
-    User.findOne({ id: req.params.user }).populate('projects').exec(function(err, user) {
+    User.findOne({ id: req.params.user }, function(err, user) {
       if (err) {
         sails.log.error(err);
         return res.serverError();
@@ -10,6 +10,26 @@ module.exports = {
       if (!user) return res.notFound();
 
       async.auto({
+
+        projects: function(autoCallback) {
+
+          var projects = [];
+          async.each(user.projects, function(project, eachCallback) {
+
+            Project.list({ id: project }, { limit: 1, page: 0 }, 'createdAt DESC', function(err, tmpProjects) {
+              if (err) return eachCallback(err);
+              if (tmpProjects.length < 1) return eachCallback('not_found');
+
+              projects.push(tmpProjects[0]);
+              eachCallback();
+            });
+            
+          }, function(err) {
+            if (err) return autoCallback(err);
+            autoCallback(null, projects);
+          });
+
+        },
 
         total: function(autoCallback) {
           Fund.sum(user.id, 'user', autoCallback);
