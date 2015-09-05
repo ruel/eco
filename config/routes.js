@@ -18,4 +18,6 @@ module.exports.routes = {
   'post /projects/:project/fund': 'Project.postFund',
   'post /projects/add': 'Project.postAdd',
 
+  'get /callbacks/ipn': 'Callback.ipn',
+
 };
