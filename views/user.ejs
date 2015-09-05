@@ -10,20 +10,20 @@
   <div class="content-frame">
     <div class="row">
       <div class="col-md-6 col-xs-6">
-        <h3 class="text-color-4 text-left">Supported Projects (<%= projects.length %>)</h3>
+        <h3 class="text-color-4 text-left">Supported Projects (<%= user.supported.length %>)</h3>
       </div>
       <div class="col-md-6 col-xs-6">
-        <% if(investments.length !== 0) { %>
-        <a class="btn btn-2 text-spacing pull-right margin-t" type="button" href="/farms/browse">Browse more farms</a><br>
+        <% if(user.supported.length !== 0) { %>
+        <a class="btn btn-2 pull-right margin-t" type="button" href="/projects/browse">Browse more projects</a><br>
         <% } %>
       </div>
     </div>
     <div class="row">
-      <% if(investments.length === 0) { %>
+      <% if(user.supported.length === 0) { %>
         <center>
           <img src="/images/sad.png" height="100px">
-          <h4 class="text-color-2">Oops, you haven't backed up any farms yet.</h4>
-          <a class="btn btn-lg btn-2 text-spacing" type="button" href="/farms/browse">SUPPORT A FARM TODAY</a><br>
+          <h4 class="text-color-2">Oops, you haven't supported any green projects yet.</h4>
+          <a class="btn btn-lg btn-1" type="button" href="/projects/browse">SUPPORT A PROJECT</a><br>
         </center>
       <% } else { %>
         <div class="table-container">
@@ -31,40 +31,18 @@
               <thead>
                 <tr>
                   <th>#</th>
-                  <th>Date of Investment</th>
-                  <th>Name of Farm</th>
-                  <th>Crop</th>
-                  <th>Location</th>
-                  <th>Amount Invested</th>
-                  <th>Goal</th>
-                  <th>End Date</th>
+                  <th>Project Name</th>
+                  <th>Category</th>
                   <th>Details</th>
                 </tr>
               </thead>
               <tbody>
-                <% for (var i in investments) { %>
+                <% for (var i in user.supported) { %>
                 <tr>
                   <td><%= parseInt(i) + 1 %></td>
-                  <% if( investments[i].createdAt ) { %>
-                  <td>
-                    <%= new Date(investments[i].updatedAt).toLocaleDateString() %>
-                    <br>
-                    <%= new Date(investments[i].updatedAt).toLocaleTimeString() %>
-                  </td>
-                  <% } else { %>
-                    <td>N/A</td>
-                  <% } %>
-                  <td><%= investments[i].crop.farm %></td>
-                  <td><%= investments[i].crop.type %></td>
-                  <td><%= investments[i].crop.province %></td>
-                  <td>₱<%= investments[i].amount %></td>
-                  <td>₱<%= investments[i].crop.goal %></td>
-                  <td>
-                    <%= new Date(investments[i].crop.funding_date).toLocaleDateString() %>
-                    <br>
-                    <%= new Date(investments[i].crop.funding_date).toLocaleTimeString() %>
-                  </td>
-                  <td><a href="/farms/<%= investments[i].crop.farm %>">View Details</a></td>
+                  <td><%= user.supported[i].name %></td>
+                  <td><%= user.supported[i].category.name %></td>
+                  <td><a href="/projects/<%= user.supported[i].id %>">View Details</a></td>
                 </tr>
                 <% } %>
               </tbody>
