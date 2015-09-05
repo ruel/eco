@@ -128,7 +128,7 @@ module.exports = {
         transactions: [{
           item_list: {
             items: [{
-              name: project.title,
+              name: project.name,
               sku: project.id,
               price: amount,
               currency: 'PHP',
