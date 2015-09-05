@@ -6,4 +6,9 @@ $(document).ready(function() {
     $('body').css('background-color', '#f7fafa');
   }
   
+  $('#project-rewards-btn').on('click', function(e){
+    $('#project-details').fadeOut(500);
+    $('#project-rewards').delay(550).fadeIn(500);
+  });
+  
 });
