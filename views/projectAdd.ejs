@@ -4,39 +4,42 @@
     <div class="col-md-3"></div>
     <div class="col-md-6">
       <div class="content-frame">
-        <br />
-        <div class="row center">
-          <h1 class="text-color-g"><span class="glyphicon glyphicon-option-horizontal" aria-hidden="true"></span></h1>
-          <h1 class="text-color-1">Start a project</h1>
-        </div>
-        <br>
         <form class="form-style" role="form" action="/projects/add" method="POST">
-          <div class="form-group">
-            <input type="text" class="form-control input-1 margin-tb-sm" placeholder="Project name" name="name">
-          </div>
-          <div class="form-group">
-            <select class="form-control input-1 margin-tb-sm" name="category">
-              <% categories.forEach(function(category) { %>
-                <option value="<%= category.id %>"><%= category.name %></option>
-              <% }) %>
-            </select>
-          </div>
-          <div class="form-group">
-            <input type="text" class="form-control input-1 margin-tb-sm" placeholder="Short description about your project" name="description">
-          </div>
-          <i><p class="text-color-g">Detailed description</p></i>
-          <div class="form-group">
-            <textarea rows="10" cols="50" class="form-control input-1 margin-tb-sm" placeholder="Content" name="content"></textarea>
-          </div>
-          <h3 class="text-color-g">Funding details</h3>
-          <div class="form-group">
-            <input type="number" class="form-control input-1 margin-tb-sm" placeholder="Goal (in PHP)" name="goal">
-          </div>
-          <div class="form-group">
-            <input type="number" class="form-control input-1 margin-tb-sm" placeholder="Duration (in days)" name="duration">
-          </div>
-          <div class="form-group">
-            <input type="text" class="form-control input-1 margin-tb-sm" placeholder="Image Path" name="image_path">
+          <div id="project-details">
+            <br />
+            <div class="row center">
+              <h1 class="text-color-g"><span class="glyphicon glyphicon-option-horizontal" aria-hidden="true"></span></h1>
+              <h1 class="text-color-1">Start a project</h1>
+            </div>
+            <br>
+            <div class="form-group">
+              <input type="text" class="form-control input-1 margin-tb-sm" placeholder="Project name" name="name">
+            </div>
+            <div class="form-group">
+              <select class="form-control input-1 margin-tb-sm" name="category">
+                <% categories.forEach(function(category) { %>
+                  <option value="<%= category.id %>"><%= category.name %></option>
+                <% }) %>
+              </select>
+            </div>
+            <div class="form-group">
+              <input type="text" class="form-control input-1 margin-tb-sm" placeholder="Short description about your project" name="description">
+            </div>
+            <i><p class="text-color-g">Detailed description</p></i>
+            <div class="form-group">
+              <textarea rows="10" cols="50" class="form-control input-1 margin-tb-sm" placeholder="Content" name="content"></textarea>
+            </div>
+            <h3 class="text-color-g">Funding details</h3>
+            <div class="form-group">
+              <input type="number" class="form-control input-1 margin-tb-sm" placeholder="Goal (in PHP)" name="goal">
+            </div>
+            <div class="form-group">
+              <input type="number" class="form-control input-1 margin-tb-sm" placeholder="Duration (in days)" name="duration">
+            </div>
+            <div class="form-group">
+              <input type="text" class="form-control input-1 margin-tb-sm" placeholder="Image Path" name="image_path">
+            </div>
+            <button class="btn btn-lg btn-1 btn-block" id="project-rewards-btn">Add rewards</button><br>
           </div>
           <button class="btn btn-lg btn-1 btn-block" type="submit">Add project</button><br>
         </form>
