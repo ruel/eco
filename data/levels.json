@@ -1,0 +1,22 @@
+[
+  {
+    "min": 0,
+    "name": "Civilian"
+  },
+  {
+    "min": 1000,
+    "name": "Apprentice"
+  },
+  {
+    "min": 5000,
+    "name": "Sidekick"
+  },
+  {
+    "min": 10000,
+    "name": "Hero"
+  },
+  {
+    "min": 20000,
+    "name": "Super Hero"
+  }
+]

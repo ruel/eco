@@ -3,6 +3,7 @@ var LocalStrategy = require('passport-local').Strategy;
 var FacebookStrategy = require('passport-facebook').Strategy;
 
 var categories = require('../data/categories.json');
+var levels = require('../data/levels.json');
 
 module.exports.bootstrap = function(cb) {
 
@@ -11,6 +12,14 @@ module.exports.bootstrap = function(cb) {
 
     categories.forEach(function(category) {
       Category.create(category, function() {});
+    });
+  });
+
+  Level.count(function(err, count) {
+    if (count !== 0) return;
+
+    levels.forEach(function(level) {
+      Level.create(level, function() {});
     });
   });
 
