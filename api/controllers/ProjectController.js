@@ -126,6 +126,8 @@ module.exports = {
             }]
           },
 
+          custom: req.user.id,
+
           amount: {
             currency: 'PHP',
             total: amount
