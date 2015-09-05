@@ -256,6 +256,12 @@ a.btn-trans-blk  {
   font-weight: 300;
 }
 
+.textarea-1 {
+  border: 1px solid #51a33d !important;
+  color: #51a33d !important;
+  font-weight: 300;
+}
+
 .page {
   margin-top: 120px;
 }

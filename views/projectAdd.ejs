@@ -27,7 +27,7 @@
             </div>
             <i><p class="text-color-g">Detailed description</p></i>
             <div class="form-group">
-              <textarea rows="10" cols="50" class="form-control input-1 margin-tb-sm" placeholder="Content" name="content"></textarea>
+              <textarea rows="10" cols="50" class="form-control textarea-1 margin-tb-sm" placeholder="Content" name="content"></textarea>
             </div>
             <h3 class="text-color-g">Funding details</h3>
             <div class="form-group">
@@ -41,7 +41,27 @@
             </div>
             <button class="btn btn-lg btn-1 btn-block" id="project-rewards-btn">Add rewards</button><br>
           </div>
-          <button class="btn btn-lg btn-1 btn-block" type="submit">Add project</button><br>
+          <div id="project-rewards" class="hidden">
+            <br>
+            <div class="row center">
+              <h1 class="text-color-g"><span class="glyphicon glyphicon-option-horizontal" aria-hidden="true"></span></h1>
+              <h1 class="text-color-1">Add rewards</h1>
+              <p class="text-color-g">Thank the people who will support you through unique rewards!</p>
+            </div>
+            <div class="rewards">
+              <br>
+              <h4 class="text-color-b">Reward #1</43>
+              <div class="form-group">
+                <input type="number" class="form-control input-1 margin-tb-sm" placeholder="Pledge from" name="rewards[0][start_amount]">
+              </div>
+              <i><p class="text-color-g">Reward description</p></i>
+              <div class="form-group">
+                <textarea rows="10" cols="50" class="form-control textarea-1 margin-tb-sm" placeholder="Content" name="rewards[0][details]"></textarea>
+              </div>
+            </div>
+            <p class="text-color-lg" id="add-rewards-btn" type="button"><span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span>  Add more rewards</p>
+            <button class="btn btn-lg btn-1 btn-block" type="submit">Add project</button><br>
+          </div>
         </form>
       </div>
     </div>

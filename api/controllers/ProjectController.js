@@ -17,6 +17,7 @@ module.exports = {
 
   postAdd: function(req, res) {
     req.body.owner = req.user.id;
+    console.log(req.body.rewards)
     Project.create(req.body, function(err, project) {
       if (err) {
         if (Utils.isValidationError(err)) {
@@ -99,7 +100,6 @@ module.exports = {
 
       res.view('project', {
         project: projects[0],
-        rewards: rewards,
         thankyou: req.query.thankyou
       });
     });
