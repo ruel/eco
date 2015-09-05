@@ -37,6 +37,7 @@ module.exports.bootstrap = function(cb) {
     clientID: sails.config.facebook.clientID,
     clientSecret: sails.config.facebook.clientSecret,
     callbackURL: sails.config.facebook.callbackURL,
+    profileFields: ['id', 'first_name', 'last_name', 'email'],
     enableProof: false
   }, function(accessToken, refreshToken, profile, done) {
     User.findOne({ username: profile.id }, function(err, user) {
