@@ -12,7 +12,7 @@ module.exports = {
       async.auto({
 
         total: function(autoCallback) {
-          Find.sum(user.id, 'user', autoCallback);
+          Fund.sum(user.id, 'user', autoCallback);
         },
 
         level: ['total', function(autoCallback, result) {
@@ -39,7 +39,7 @@ module.exports = {
               supported.push(projects[0]);
               eachCallback();
             });
-
+            
           }, function(err) {
             if (err) return autoCallback(err);
             autoCallback(null, supported);
