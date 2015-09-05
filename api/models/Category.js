@@ -8,6 +8,11 @@ module.exports = {
     name: {
       type: 'string',
       required: true
+    },
+
+    projects: {
+      collection: 'project',
+      via: 'category'
     }
 
   }

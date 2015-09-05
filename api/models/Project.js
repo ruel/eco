@@ -48,6 +48,10 @@ module.exports = {
       via: 'project'
     },
 
+    category: {
+      model: 'category'
+    }
+
   },
 
   list: function(where, pagination, sort, callback) {
