@@ -202,6 +202,11 @@ a.btn-trans-blk  {
   text-align: center;
 }
 
+#section-2 {
+  padding: 50px 50px;
+  background-color: #f7fafa;
+}
+
 .content-frame {
   background-color: white;
   border: 1px solid #d9d9de;
@@ -249,6 +254,16 @@ a.btn-trans-blk  {
 
 .page {
   margin-top: 120px;
+}
+
+.pull-right {
+  float: right;
+  text-align: right;
+}
+
+.pull-left {
+  float: left;
+  text-align: left;
 }
 
 @media screen and (max-width: 767px) {
