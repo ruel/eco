@@ -16,7 +16,7 @@ module.exports = {
   },
 
   postAdd: function(req, res) {
-    req.body.user = req.user.id;
+    req.body.owner = req.user.id;
     Project.create(req.body, function(err, project) {
       if (err) {
         if (Utils.isValidationError(err)) {
