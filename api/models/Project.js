@@ -80,7 +80,7 @@ module.exports = {
 
         async.each(tmpProjects, function(project, eachCallback) {
 
-          Fund.sum(project.id, function(err, total) {
+          Fund.sum(project.id, 'project', function(err, total) {
             if (err) return eachCallback(err);
             project.total = total || 0;
 

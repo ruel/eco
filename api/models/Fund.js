@@ -20,8 +20,9 @@ module.exports = {
 
   },
 
-  sum: function(project, callback) {
-    Fund.find({ project: project }, function(err, funds) {
+  sum: function(id, name, callback) {
+    var query[name] = id;
+    Fund.find(query, function(err, funds) {
       if (err) return callback(err);
 
       var fundList = _.map(funds, function(f) { return f.amount });
