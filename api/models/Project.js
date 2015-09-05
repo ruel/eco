@@ -37,6 +37,11 @@ module.exports = {
       required: false
     },
 
+    total: {
+      type: 'float',
+      defaultsTo: 0.0
+    },
+
     owner: {
       model: 'user'
     },
@@ -60,8 +65,8 @@ module.exports = {
       .paginate(pagination)
       .sort(sort)
       .populate('owner')
-      .populate('funds')
       .exec(function(err, projects) {
+
         return callback(err, projects, count);
       });
     });
