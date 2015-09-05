@@ -5,7 +5,7 @@ module.exports = {
 
   attributes: {
 
-    min: {
+    amount: {
       type: 'integer',
       required: true
     },

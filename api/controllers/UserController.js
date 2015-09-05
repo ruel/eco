@@ -1,7 +1,7 @@
 module.exports = {
 
   getUser: function(req, res) {
-    User.findOne({ id: req.params.user }, function(err, user) {
+    User.findOne({ id: req.params.user }).populate('projects').populate('funds').exec(function(err, user) {
       if (err) {
         sails.log.error(err);
         return res.serverError();
@@ -16,7 +16,7 @@ module.exports = {
           var projects = [];
           async.each(user.projects, function(project, eachCallback) {
 
-            Project.list({ id: project }, { limit: 1, page: 0 }, 'createdAt DESC', function(err, tmpProjects) {
+            Project.list({ id: project.id }, { limit: 1, page: 0 }, 'createdAt DESC', function(err, tmpProjects) {
               if (err) return eachCallback(err);
               if (tmpProjects.length < 1) return eachCallback('not_found');
 
@@ -36,13 +36,15 @@ module.exports = {
         },
 
         level: ['total', function(autoCallback, result) {
-          Level.find({ '<': { min: result.total } }, function(err, levels) {
+          Level.find({ amount: { '<=' : result.total } }, function(err, levels) {
             if (err) {
               sails.log.error(err);
               return res.serverError();
             }
+            
+            console.log(levels);
 
-            var level = _.max(levels, function(l) { return l.min });
+            var level = _.max(levels, function(l) { return l.amount });
             autoCallback(null, level);
           });
         }],
@@ -71,7 +73,9 @@ module.exports = {
         user.level = result.level;
         user.total = result.total;
         user.supported = result.supported;
+        user.projects = result.projects;
 
+        console.log(user);
         res.view('user', {
           user: user
         });
