@@ -181,6 +181,20 @@ a.btn-trans-blk  {
   font-weight: bold;
 }
 
+.thumbnail-content {
+  padding: 10px;
+}
+
+.highlight-line {
+  margin: 10px 0;
+  background-color: #333 !important;
+  color: white !important;
+}
+
+.highlight-line p {
+  margin: 10px;
+}
+
 .text-color-1 {
   color: #51a33d;
 }
@@ -209,6 +223,49 @@ a.btn-trans-blk  {
 #section-2 {
   padding: 50px 50px;
   background-color: #f7fafa;
+}
+
+#browse-section {
+  margin-top: 100px;
+}
+
+.top-cat {
+  background-color: #51a33d;
+  text-transform: uppercase;
+  font-size: 1.2em;
+  color: #fff;
+  padding: 5px;
+  margin: 0;
+  vertical-align: text-center;
+  border: 1px solid #d9d9de;
+  border-bottom-width: 0px;
+}
+
+.top-cat p {
+  margin: 10px 10px;
+}
+
+.progress-text {
+  color: #999;
+  margin-left: 10px;
+  font-weight: 100;
+}
+
+.raised-text {
+  font-size: 1.6em;
+  font-weight: 400;
+}
+
+.full-image {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.days-left-text {
+  font-size: 1.2em;
+  font-weight: 100;
+  color: #999;
 }
 
 .content-frame {
@@ -279,7 +336,7 @@ a.btn-trans-blk  {
 .thumbnail-frame {
   background-color: white;
   border: 1px solid #d9d9de;
-  padding: 20px 20px;
+  border-top-width: 0px;
 }
 
 .progress {

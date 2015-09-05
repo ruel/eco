@@ -1,37 +1,10 @@
 <%- partial('partials/header') %>
 
-<div class="jumbotron parallax-window" data-parallax="scroll" data-image-src="/images/bg.jpg">
-  <div class="container center">
-    <h1>Let's fund the future together</h1>
-    <p>Giving back doesn't have to cost the earth. We're focused on making a better, brighter tomorrow <strong>for all of us</strong>.</p>
-    <%if (req.user) { %>
-      <a href="/projects"><button class="btn btn-trans btn-lg" id="start-btn">Start today</button></a>
-    <% } else { %>
-      <a href="/auth/register"><button class="btn btn-trans btn-lg" id="start-btn">Start today</button></a>
-    <% } %>
-  </div>
-</div>
-
-<div id="section-1" class="row">
-  <div class="container">
-    <h1 class="text-color-1">Become part of the solution to climate change</h1>
-    <h3 class="text-color-g">Fund the Future is a sustainable gamified crowdfunding platform that helps green projects become a reality.</h3>
-    <br>
-    <a href="/projects"><button class="btn btn-1 btn-lg">Sponsor a project and be a climate hero</button></a>
-    <br>
-    <br>
-    <br>
-  </div>
-</div>
-
-<div id="section-2"  class="row">
+<div id="browse-section" class="row">
   <div class="container">
     <div class="row">
       <div class="col-md-9 col-xs-7">
-        <h1 class="text-color-1">Latest projects</h1>
-      </div>
-      <div class="col-md-1 col-xs-5">
-        <a class="btn btn-1 margin-tb btn-lg margin-l" href="/projects" role="button">View all</a>
+        <h1 class="text-color-1">Projects for the future</h1>
       </div>
       <div class="col-md-2 mobile-off">
         <a class="btn btn-trans-blk margin-tb btn-lg" href="/projects/add" role="button">Start a Project</a>
@@ -85,13 +58,13 @@
   <% } else { %>
     <div class="row">
       <center>
-        <h4 class="text-color-1">Oops, no available projects yet.</h4>
+        <h4 class="text-color-1">No projects yet :(</h4>
         <a class="btn btn-1" type="button" href="/projects/add">START A PROJECT</a><br>
         <br>
       </center>
     </div>
   <% } %>
-</div>
+  </div>
 </div>
 
 <%- partial('partials/footer') %>
