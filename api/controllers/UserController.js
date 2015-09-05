@@ -15,8 +15,8 @@ module.exports = {
           Find.sum(user.id, 'user', autoCallback);
         },
 
-        level: function(autoCallback) {
-          Level.find({ '<': { min: total } }, function(err, levels) {
+        level: ['total', function(autoCallback, result) {
+          Level.find({ '<': { min: result.total } }, function(err, levels) {
             if (err) {
               sails.log.error(err);
               return res.serverError();
@@ -25,7 +25,7 @@ module.exports = {
             var level = _.max(levels, function(l) { return l.min });
             autoCallback(null, level);
           });
-        },
+        }],
 
         supported: function(autoCallback) {
           
