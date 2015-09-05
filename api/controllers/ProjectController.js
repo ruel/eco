@@ -1,3 +1,5 @@
+var paypal = require('paypal-rest-sdk');
+
 module.exports = {
 
   getAdd: function(req, res) {
@@ -86,7 +88,64 @@ module.exports = {
       if (projects.length < 1) return res.notFound();
 
       res.view('project', {
-        project: projects[0]
+        project: projects[0],
+        thankyou: req.query.thankyou
+      });
+    });
+  },
+
+  fund: function(req, res) {
+    var amount = parseFloat(req.body.amount);
+    var projectId = req.params.project;
+
+    Project.findOne({ id: projectId }, function(err, project) {
+      if (err) {
+        sails.log.error(err);
+        return res.serverError();
+      }
+
+      var payment = {
+        intent: 'sale',
+        payer: {
+          payment_method: 'paypal'
+        },
+
+        redirect_urls: {
+          return_url: 'http://localhost:1339/projects/' + projectId + '?thankyou=1',
+          cancel_url: 'http://localhost:1339/projects/' + projectId + '?cancelled=true'
+        },
+
+        transactions: [{
+          item_list: {
+            items: [{
+              name: project.title,
+              sku: project.id,
+              price: amount,
+              currency: 'PHP',
+              quantity: 1
+            }]
+          },
+
+          amount: {
+            currency: 'PHP',
+            total: amount
+          },
+
+          description: project.description
+        }]
+      };
+
+      paypal.payment.create(payment, sails.config.paypal, function(err, paypalRes) {
+        if (err) {
+          sails.log.error(err);
+          return res.serverError();
+        }
+
+        var link = _.find(paypalRes.links, function(plink) {
+          return plink.rel === 'approval_url';
+        });
+
+        return res.redirect(link.href);
       });
     });
   }
