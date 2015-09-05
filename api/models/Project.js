@@ -32,6 +32,11 @@ module.exports = {
       required: true
     },
 
+    image_path: {
+      type: 'string',
+      required: false
+    },
+
     owner: {
       model: 'user'
     },
