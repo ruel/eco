@@ -21,7 +21,7 @@
     <div class="row">
       <% if(user.supported.length === 0) { %>
         <center>
-          <h4 class="text-color-2">Oops, you haven't supported any green projects yet.</h4>
+          <h4 class="text-color-2">Oops, no supported green projects here yet.</h4>
           <a class="btn btn-lg btn-1" type="button" href="/projects/browse">SUPPORT A PROJECT</a><br>
         </center>
       <% } else { %>
@@ -66,7 +66,7 @@
       <% if(user.projects.length === 0) { %>
         <center>
           <h4 class="text-color-2">Have an idea that can slow down climate change? We'll help you out!</h4>
-          <a class="btn btn-lg btn-1" type="button" href="/projects/browse">START A PROJECT</a><br>
+          <a class="btn btn-lg btn-1" type="button" href="/projects/add">START A PROJECT</a><br>
         </center>
       <% } else { %>
         <div class="table-container">
