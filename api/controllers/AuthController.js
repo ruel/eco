@@ -1,7 +1,9 @@
 module.exports = {
 
   getRegister: function(req, res) {
-    res.view('register');
+    res.view('register', {
+      regDetails: req.session.regDetails
+    });
   },
 
   postRegister: function(req, res) {
