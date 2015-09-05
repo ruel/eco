@@ -3,7 +3,7 @@
 <div class="container page">
   <center>
     <h1 class="text-color-1"><%= project.name %></h1>
-    <p>by <span class="text-color-1"><%= project.owner %></span><p>
+    <p>by <span class="text-color-1"><%= project.owner.first_name %> <%= project.owner.last_name %></span><p>
   </center>
 </div>
 <br>
@@ -16,7 +16,8 @@
       <br>
       <div class="content-frame">
         <h2 class="text-color-b"><%= project.description %></h2>
-        <p class="text-color-lg"><span class="glyphicon glyphicon-tags" aria-hidden="true"></span> <%= project.category.name %></p>
+        <p class="text-color-1"><span class="glyphicon glyphicon-tags" aria-hidden="true"></span>
+          <%= project.category.name %></p>
         <hr>
         <p class="text-color-lg"><%= project.content %></p>
       </div>
