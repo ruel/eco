@@ -41,5 +41,29 @@ module.exports = {
       model: 'user'
     },
 
-  }
+    funds: {
+      collection: 'fund',
+      via: 'project'
+    },
+
+  },
+
+  list: function(where, pagination, sort, callback) {
+    Project.count({
+      where: where
+    }, function(err, count) {
+      if (err) return callback(err);
+
+      Project.find({
+        where: where
+      })
+      .paginate(pagination)
+      .sort(sort)
+      .populate('owner')
+      .populate('funds')
+      .exec(function(err, projects) {
+        return callback(err, projects, count);
+      });
+    });
+  },
 };
