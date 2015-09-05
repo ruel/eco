@@ -6,8 +6,8 @@
     <p>by <span class="text-color-1"><%= project.owner.first_name %> <%= project.owner.last_name %></span><p>
   </center>
 </div>
-<br
-<div class="modal fade">
+<br />
+<div id="supportModal" class="modal fade">
   <div class="modal-dialog">
     <div class="modal-content">
       <form class="form-style" role="form" action="/projects/<%= project.id %>/fund" method="POST">
@@ -22,7 +22,7 @@
           </div> 
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-lg btn-1 btn-block" type="submit">Let&quot;s go!</button>
+          <button class="btn btn-lg btn-1 btn-block" type="submit">Let&quot;s go!</button>
         </div>
       </form>
     </div>
@@ -53,7 +53,7 @@
         <h1 class="text-color-b no-margin-b"><%= project.days_left %></h1>
         <p class="text-lg text-color-g">days to go</p>
         <br>
-        <p><a class="btn btn-1 btn-lg" role="button">SUPPORT THIS PROJECT</a></p>
+        <p><a class="btn btn-1 btn-lg" data-toggle="modal" data-target="#supportModal" role="button">SUPPORT THIS PROJECT</a></p>
       </div>
     </div>
   </div>

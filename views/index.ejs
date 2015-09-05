@@ -4,7 +4,11 @@
   <div class="container center">
     <h1>Let's fund the future together</h1>
     <p>Giving back doesn't have to cost the earth. We're focused on making a better, brighter tomorrow <strong>for all of us</strong>.</p>
-    <a href="/auth/register"><button class="btn btn-trans btn-lg" id="start-btn">Start today</button></a>
+    <%if (req.user) { %>
+      <a href="/projects"><button class="btn btn-trans btn-lg" id="start-btn">Start today</button></a>
+    <% } else { %>
+      <a href="/auth/register"><button class="btn btn-trans btn-lg" id="start-btn">Start today</button></a>
+    <% } %>
   </div>
 </div>
 
@@ -24,7 +28,7 @@
   <div class="container">
     <div class="row">
       <div class="col-md-9 col-xs-7">
-        <h1 class="text-color-1">Featured projects</h1>
+        <h1 class="text-color-1">Latest projects</h1>
       </div>
       <div class="col-md-1 col-xs-5">
         <a class="btn btn-1 margin-tb btn-lg margin-l" href="/projects/browse" role="button">View all</a>
