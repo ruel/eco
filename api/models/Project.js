@@ -6,8 +6,19 @@ module.exports = {
   attributes: {
 
     name: {
-      type: 'string;,
+      type: 'string',
       maxLength: 100,
+      required: true
+    },
+
+    description: {
+      type: 'string',
+      maxLength: 255,
+      required: true
+    },
+
+    content: {
+      type: 'text',
       required: true
     },
 
