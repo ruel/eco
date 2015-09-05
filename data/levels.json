@@ -1,22 +1,22 @@
 [
   {
-    "min": 0,
+    "amount": 0,
     "name": "Civilian"
   },
   {
-    "min": 1000,
+    "amount": 1000,
     "name": "Apprentice"
   },
   {
-    "min": 5000,
+    "amount": 5000,
     "name": "Sidekick"
   },
   {
-    "min": 10000,
+    "amount": 10000,
     "name": "Hero"
   },
   {
-    "min": 20000,
+    "amount": 20000,
     "name": "Super Hero"
   }
 ]

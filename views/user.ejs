@@ -2,9 +2,10 @@
 
 <div class="container page">
   <div class="row">
-    <div class="col-md-6 col-xs-6">
-      <h2 class="text-color-1 text-left"><%= req.user.first_name %> <%= req.user.last_name %></h2>
-    </div>
+    <center>
+      <h2 class="text-color-1"><%= user.first_name %> <%= user.last_name %></h2>
+      <h4 class="text-color-1"><%= user.level.name %></h4>
+    </center>
   </div>
   <hr>
   <div class="content-frame">
@@ -21,7 +22,7 @@
     <div class="row">
       <% if(user.supported.length === 0) { %>
         <center>
-          <h4 class="text-color-2">Oops, you haven't supported any green projects yet.</h4>
+          <h4 class="text-color-2">Oops, no supported green projects here yet.</h4>
           <a class="btn btn-lg btn-1" type="button" href="/projects/browse">SUPPORT A PROJECT</a><br>
         </center>
       <% } else { %>
@@ -58,7 +59,7 @@
       </div>
       <div class="col-md-6 col-xs-6">
         <% if(user.projects.length !== 0) { %>
-        <a class="btn btn-2 pull-right margin-t" type="button" href="/projects/browse">Browse more projects</a><br>
+        <a class="btn btn-trans-blk pull-right margin-t" type="button" href="/projects/browse">Browse more projects</a><br>
         <% } %>
       </div>
     </div>
@@ -66,8 +67,8 @@
       <% if(user.projects.length === 0) { %>
         <center>
           <h4 class="text-color-2">Have an idea that can slow down climate change? We'll help you out!</h4>
-          <a class="btn btn-lg btn-1" type="button" href="/projects/browse">START A PROJECT</a><br>
-          </centeradd
+          <a class="btn btn-lg btn-1" type="button" href="/projects/add">START A PROJECT</a><br>
+        </center>
       <% } else { %>
         <div class="table-container">
           <table class="table table-hover">
@@ -80,14 +81,16 @@
                 </tr>
               </thead>
               <tbody>
-                <% for (var j in user.projects) { %>
+                <% var j = 0; %>
+                <% user.projects.forEach(function(project) { %>
+                <% j++; %>
                 <tr>
-                  <td><%= parseInt(j) + 1 %></td>
-                  <td><%= user.projects[j].name %></td>
-                  <td><%= user.projects[j].category %></td>
-                  <td><a href="/projects/<%= user.projects[j].id %>">View Details</a></td>
+                  <td><%= parseInt(j) %></td>
+                  <td><%= project.name %></td>
+                  <td><%= project.category.name %></td>
+                  <td><a href="/projects/<%= project.id %>">View Details</a></td>
                 </tr>
-                <% } %>
+                <% }); %>
               </tbody>
             </table>
         </div>
