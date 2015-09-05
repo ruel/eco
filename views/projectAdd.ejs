@@ -16,12 +16,9 @@
           </div>
           <div class="form-group">
             <select class="form-control input-1 margin-tb-sm" name="category">
-              <option value="Renewable energy">Renewable Energy</option>
-              <option value="Eco-tourism">Eco-tourism</option>
-              <option value="Marine, Wildlife & Biodiversity">Marine, Wildlife &amp; Biodiversity</option>
-              <option value="Waste Management">Waste Management</option>
-              <option value="Environmental Protection">Environmental Protection</option>
-              <option value="Disaster Resilience">Disaster Resilience</option>
+              <% categories.forEach(function(category) { %>
+                <option value="<%= category.id %>"><%= category.name %></option>
+              <% }) %>
             </select>
           </div>
           <div class="form-group">
