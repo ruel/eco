@@ -1,0 +1,40 @@
+<%- partial('partials/header') %>
+
+<div class="container page">
+  <center>
+    <h1 class="text-color-1"><%= project.name %></h1>
+    <p>by <span class="text-color-1"><%= project.owner %></span><p>
+  </center>
+</div>
+<br>
+<div class="container">
+  <div class="row">
+    <div class="col-md-8">
+      <div class="image-container">
+        <img class="details-image" src="<%= project.image_path %>" alt="<%= project.name %>">
+      </div>
+      <br>
+      <div class="content-frame">
+        <h2 class="text-color-b"><%= project.description %></h2>
+        <p class="text-color-lg"><span class="glyphicon glyphicon-tags" aria-hidden="true"></span> <%= project.category %></p>
+        <hr>
+        <p class="text-color-lg"><%= project.content %></p>
+      </div>
+      <hr>
+    </div>
+    <div class="col-md-4">
+      <div class="center-mobile">
+        <h1 class="text-color-b no-margin-b"><%= project.funds.length %></h1>
+        <p class="text-lg text-color-g">supporters</p>
+        <h1 class="text-color-b no-margin-b">₱<%= project.total %></h1>
+        <p class="text-lg text-color-g">total amount raised of ₱<%= project.goal %> goal</p>
+        <h1 class="text-color-b no-margin-b"><%= project.days_left %></h1>
+        <p class="text-lg text-color-g">days to go</p>
+        <br>
+        <p><a class="btn btn-1 btn-lg" role="button">SUPPORT THIS PROJECT</a></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<%- partial('partials/footer') %>
