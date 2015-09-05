@@ -40,6 +40,31 @@ module.exports = {
       required: true
     }
 
-  }
+  },
+
+  register: function(data, callback) {
+    if (data.password !== data.confirmPassword) {
+      return callback(null, false, {
+        message: 'Passwords do not match'
+      });
+    }
+
+    data.password = Utils.MD5(data.password);
+    delete data.confirmPassword;
+
+    User.create(data, function(err, user) {
+      if (err) {
+        if (Utils.isValidationError(err)) {
+          return callback(null, false, {
+            message: 'Please complete all the fields'
+          });
+        }
+
+        return callback(err);
+      }
+
+      return callback(null, user);
+    });
+  },
 
 };
