@@ -43,7 +43,10 @@ module.exports = {
     var pagination = { limit: pageLimit, page: page };
 
     Project.list(query, pagination, sort, function(err, projects, maxCount) {
-      if (err) return res.serverError();
+      if (err) {
+        sails.log.error(err);
+        return res.serverError();
+      }
 
       delete req.query.page;
 
@@ -67,5 +70,25 @@ module.exports = {
       });
     });
   },
+
+  get: function(req, res) {
+    Project.list({
+      id: req.params.project
+    }, {
+      limit: 1,
+      page: 0
+    }, 'createdAt DESC', function(err, projects) {
+      if (err) {
+        sails.log.error(err);
+        return res.serverError();
+      }
+
+      if (projects.length < 1) return res.notFound();
+
+      res.view('project', {
+        project: projects[0]
+      });
+    });
+  }
 
 };
