@@ -40,6 +40,16 @@ module.exports = {
       required: true
     },
 
+    projects: {
+      collection: 'project',
+      via: 'owner'
+    },
+
+    funds: {
+      collection: 'fund',
+      via: 'user'
+    }
+
   },
 
   register: function(data, callback) {
