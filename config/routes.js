@@ -12,6 +12,8 @@ module.exports.routes = {
   'get /auth/facebook': 'Auth.facebookLogin',
   'get /auth/facebook/callback': 'Auth.facebookCallback',
 
+  'get /users/:user': 'User.getUser',
+
   'get /projects/browse': 'Project.browse',
   'get /projects/add': 'Project.getAdd',
   'get /projects/:project': 'Project.get',
