@@ -3,7 +3,16 @@ var paypal = require('paypal-rest-sdk');
 module.exports = {
 
   getAdd: function(req, res) {
-    res.view('projectAdd');
+    Category.find(function(err, categories) {
+      if (err) {
+        sails.log.error(err);
+        return res.serverError();
+      }
+
+      res.view('projectAdd', {
+        categories: categories
+      });
+    });
   },
 
   postAdd: function(req, res) {
