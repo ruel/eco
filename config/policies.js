@@ -10,4 +10,9 @@ module.exports.policies = {
     postRegister: 'sessionCheck',
   },
 
+  ProjectController: {
+    '*': 'sessionAuth',
+    browse: true,
+  }
+
 };
