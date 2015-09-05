@@ -10,6 +10,11 @@ module.exports = {
       required: true
     },
 
+    slug: {
+      type: 'string',
+      required: true
+    },
+
     projects: {
       collection: 'project',
       via: 'category'
