@@ -41,7 +41,7 @@ module.exports.bootstrap = function(cb) {
   }, function(username, password, done) {
     User.findOne({ username: username }, function(err, user) {
       if (err) return done(err);
-      if (!user || Utils.MD5(password) === user.password) return return done(null, false, { message: 'Invalid username or password' });
+      if (!user || Utils.MD5(password) === user.password) return done(null, false, { message: 'Invalid username or password' });
 
       done(null, user, { message: 'Logged-in successfully' });
     });

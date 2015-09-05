@@ -1,5 +1,5 @@
 module.exports = {
   index: function(req, res) {
-    res.end();
+    return res.view('index');
   }
 };
