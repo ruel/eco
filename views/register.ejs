@@ -5,7 +5,8 @@
     <div class="col-md-6">
       <div class="content-frame">
         <h1 class="text-color-1">Register</h1>
-        <% if(!regDetails) { %>
+        <br>
+        <% if(!req.session.regDetails) { %>
         <a href="/auth/facebook/login"><button class="btn btn-lg btn-facebook btn-block btn-wrap" type="submit">Continue with Facebook</button></a>
         <br>
         <p class="text-color-g">We'll never post anything on Facebook without your permission.</p>
@@ -18,16 +19,16 @@
         <form class="form-signin form-style" role="form" action="/auth/register" method="POST">
           <div class="form-group">
             <input type="text" class="form-control input-1 margin-tb-sm" placeholder="Email Address" name="email"
-            <% if(regDetails && regDetails.email) { %>
-              value="<%= regDetails.email %>"
+            <% if(req.session.regDetails && req.session.regDetails.email) { %>
+              value="<%= req.session.regDetails.email %>"
               readonly="readonly"
             <% } %>
             >
           </div>
-          <% if(regDetails && regDetails.username) { %>
+          <% if(req.session.regDetails && req.session.regDetails.username) { %>
           <div class="form-group">
             <input type="hidden" class="form-control input-1 margin-tb-sm" placeholder="Username" name="username"
-              value="<%= regDetails.username %>"
+              value="<%= req.session.regDetails.username %>"
               readonly="readonly">
           </div>
           <% } else { %>
@@ -38,16 +39,16 @@
           <br />
           <div class="form-group">
             <input type="text" class="form-control input-1 margin-tb-sm" placeholder="First name" name="first_name"
-            <% if(regDetails && regDetails.first_name) { %>
-              value="<%= regDetails.first_name %>"
+            <% if(req.session.regDetails && req.session.regDetails.first_name) { %>
+              value="<%= req.session.regDetails.first_name %>"
               readonly="readonly"
             <% } %>
             >
           </div>
           <div class="form-group">
             <input type="text" class="form-control input-1 margin-tb-sm" placeholder="Last name" name="last_name"
-            <% if(regDetails && regDetails.last_name) { %>
-              value="<%= regDetails.last_name %>"
+            <% if(req.session.regDetails && req.session.regDetails.last_name) { %>
+              value="<%= req.session.regDetails.last_name %>"
               readonly="readonly"
             <% } %>
             >
