@@ -68,6 +68,7 @@ module.exports = {
       .paginate(pagination)
       .sort(sort)
       .populate('owner')
+      .populate('category')
       .exec(function(err, tmpProjects) {
         if (err) return callback(err);
 
