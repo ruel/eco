@@ -38,7 +38,7 @@ module.exports = {
     email: {
       type: 'string',
       required: true
-    }
+    },
 
   },
 

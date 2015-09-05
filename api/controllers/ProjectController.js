@@ -94,7 +94,7 @@ module.exports = {
     });
   },
 
-  fund: function(req, res) {
+  postFund: function(req, res) {
     var amount = parseFloat(req.body.amount);
     var projectId = req.params.project;
 
