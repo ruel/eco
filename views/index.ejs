@@ -22,7 +22,19 @@
 
 <div id="section-2"  class="row">
   <div class="container">
-  <h1 class="text-color-1">Featured projects</h1>
+    <div class="row">
+      <div class="col-md-9 col-xs-7">
+        <h1 class="text-color-1">Featured projects</h1>
+      </div>
+      <div class="col-md-1 col-xs-5">
+        <a class="btn btn-1 margin-tb btn-lg margin-l" href="/projects/browse" role="button">View all</a>
+      </div>
+      <div class="col-md-2 mobile-off">
+        <a class="btn btn-trans-blk margin-tb btn-lg" href="/projects/add" role="button">Start a Project</a>
+      </div>
+    </div>
+  </div>
+  <div class="container">
   <br/>
   <% if (projects.length !== 0) { %>
     <% for(var i in projects) { %>

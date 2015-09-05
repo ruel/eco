@@ -16,7 +16,7 @@
       </ul>
       <div class="navbar-right">
         <% if(req.user) { %>
-          <a href="#"><button class="btn btn-trans-blk"><%= req.user.first_name %> <%= req.user.last_name %></button></a>
+          <a href="/users/<%= req.user.id %>"><button class="btn btn-trans-blk"><%= req.user.first_name %> <%= req.user.last_name %></button></a>
           <a href="/auth/logout"><button class="btn btn-1">LOG OUT</button></a>
         <% } else { %>
           <a href="/auth/login"><button class="btn btn-1">LOG IN</button></a>
