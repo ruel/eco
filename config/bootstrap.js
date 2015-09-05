@@ -2,7 +2,17 @@ var passport = require('passport');
 var LocalStrategy = require('passport-local').Strategy;
 var FacebookStrategy = require('passport-facebook').Strategy;
 
+var categories = require('../data/categories.json');
+
 module.exports.bootstrap = function(cb) {
+
+  Category.count(function(err, count) {
+    if (count !== 0) return;
+
+    categories.forEach(function(category) {
+      Category.create(category, function() {});
+    });
+  });
 
   passport.serializeUser(function(user, done) {
     done(null, user.id);
