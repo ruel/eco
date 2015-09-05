@@ -1,0 +1,80 @@
+<%- partial('partials/header') %>
+
+<div class="container pages">
+    <div class="col-md-3"></div>
+    <div class="col-md-6">
+      <div class="content-frame">
+        <h1 class="text-color-1">Register</h1>
+        <% if(!regDetails) { %>
+        <a href="/auth/facebook/login"><button class="btn btn-lg btn-facebook btn-block btn-wrap" type="submit">Continue with Facebook</button></a>
+        <br>
+        <p class="text-color-g">We'll never post anything on Facebook without your permission.</p>
+        <br>
+        <div class="text-strikethru">
+          <div class="line"></div>
+          <div class="text">or register with username</div>
+        </div>
+        <% } %>
+        <form class="form-signin form-style" role="form" action="/auth/register" method="POST">
+          <div class="form-group">
+            <input type="text" class="form-control input-1 margin-tb-sm" placeholder="Email Address" name="email"
+            <% if(regDetails && regDetails.email) { %>
+              value="<%= regDetails.email %>"
+              readonly="readonly"
+            <% } %>
+            >
+          </div>
+          <% if(regDetails && regDetails.username) { %>
+          <div class="form-group">
+            <input type="hidden" class="form-control input-1 margin-tb-sm" placeholder="Username" name="username"
+              value="<%= regDetails.username %>"
+              readonly="readonly">
+          </div>
+          <% } else { %>
+            <div class="form-group">
+              <input type="text" class="form-control input-1 margin-tb-sm" placeholder="Username" name="username">
+            </div>
+          <% } %>
+          <br />
+          <div class="form-group">
+            <input type="text" class="form-control input-1 margin-tb-sm" placeholder="First name" name="first_name"
+            <% if(regDetails && regDetails.first_name) { %>
+              value="<%= regDetails.first_name %>"
+              readonly="readonly"
+            <% } %>
+            >
+          </div>
+          <div class="form-group">
+            <input type="text" class="form-control input-1 margin-tb-sm" placeholder="Last name" name="last_name"
+            <% if(regDetails && regDetails.last_name) { %>
+              value="<%= regDetails.last_name %>"
+              readonly="readonly"
+            <% } %>
+            >
+          </div>
+          <div class="form-group">
+            <input type="text" class="form-control input-1 margin-tb-sm" placeholder="Contact number" name="contact_number">
+          </div>
+          <br />
+          <div class="form-group">
+            <input type="password" class="form-control input-1 margin-tb-sm" placeholder="Password" name="password">
+          </div>
+          <div class="form-group">
+            <input type="hidden" class="form-control input-1 margin-tb-sm" name="type" value=2>
+          </div>
+          <div class="form-group">
+            <input type="password" class="form-control input-1 margin-tb-sm" placeholder="Confirm password" name="confirmPassword">
+          </div>
+          <br />
+          <button class="btn btn-lg btn-1 btn-block" type="submit">Sign me up!</button><br>
+          <p class="text-color-g">By signing up, you agree to our <a href="/pages/terms">terms of use</a> and <a href="/pages/privacy">privacy policy</a>.</p>
+        </form>
+      </div>
+      <div class="content-frame-footer">
+        <p>Already have an account? <strong><a href="/auth/login" class="text-color-1">Log in</a></strong>
+      </div>
+    </div>
+    <div class="col-md-3"></div>
+  </div>
+
+<%- partial('partials/footer') %>

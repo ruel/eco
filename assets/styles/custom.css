@@ -32,7 +32,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .header {
-  background-color: #f5f5f5;
+  background-color: rgba(255,255,255,.92);
   position: fixed;
   top: 0;
   margin-left: auto;
@@ -137,12 +137,48 @@ a.btn-trans-blk  {
   color: white;
 }
 
+.btn-wrap {
+  white-space: normal;
+  word-wrap: break-word;
+}
+
 #start-btn {
   padding: 14px 29px;
   text-transform: uppercase;
   font-weight: 400;
   font-size: 24px;
   display: inline-block;
+}
+
+.margin-tb-md {
+  margin-top: 25px;
+  margin-bottom: 20px;
+}
+
+.margin-t {
+  margin-top: 20px;
+}
+
+.margin-tb {
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.margin-tb-sm {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.btn-facebook {
+  background-color: #3b5998;
+  color: white;
+  font-weight: bold;
+}
+
+.btn-facebook:hover {
+  background-color: #293e6a;
+  color: white;
+  font-weight: bold;
 }
 
 .text-color-1 {
@@ -166,9 +202,53 @@ a.btn-trans-blk  {
   text-align: center;
 }
 
-#section-2 {
-  padding: 100px 20px;
+.content-frame {
+  background-color: white;
+  border: 1px solid #d9d9de;
+  padding: 0px 30px 30px;
+}
+
+.content-frame-footer {
+  background-color: rgba(217,217,222,0.2);
+  border: 1px solid #d9d9de;
+  padding: 20px;
+  font-size: 15px;
   text-align: center;
+  color: #828587;
+  margin-bottom: 40px;
+}
+
+.text-strikethru {
+  position: relative;
+  text-align: center;
+}
+
+.line {
+  height: 1px;
+  background-color: #d9d9de;
+  width: 90%;
+  margin-left: 5%;
+}
+
+.text {
+  display: inline-block;
+  background-color: white;
+  padding: 5px 10px;
+  font-size: 14px;
+  top: -16px;
+  position: relative;
+  color: #828587;
+}
+
+.input-1 {
+  height: 3.5em !important;
+  border: 1px solid #51a33d !important;
+  color: #51a33d !important;
+  font-weight: 300;
+}
+
+.page {
+  margin-top: 120px;
 }
 
 @media screen and (max-width: 767px) {

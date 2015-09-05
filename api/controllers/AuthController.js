@@ -43,7 +43,7 @@ module.exports = {
 
       if (!user) {
         req.session.regDetails = regDetails;
-        return res.redirect('/user/register');
+        return res.redirect('/auth/register');
       }
 
       req.logIn(user, function(err) {
