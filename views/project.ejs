@@ -6,7 +6,28 @@
     <p>by <span class="text-color-1"><%= project.owner.first_name %> <%= project.owner.last_name %></span><p>
   </center>
 </div>
-<br>
+<br
+<div class="modal fade">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <form class="form-style" role="form" action="/projects/<%= project.id %>/fund" method="POST">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h3 class="modal-title">Support <%= project.name %></h3>
+        </div>
+        <div class="modal-body">
+          <div class="form-group">
+            <h4>PHP </h4>
+            <input type="number" value="500" name="amount" class="form-control input-1 margin-tb-sm" placeholder="Amount" />
+          </div> 
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-lg btn-1 btn-block" type="submit">Let&quot;s go!</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
 <div class="container">
   <div class="row">
     <div class="col-md-8">
