@@ -266,6 +266,36 @@ a.btn-trans-blk  {
   text-align: left;
 }
 
+.thumbnail-frame {
+  background-color: white;
+  border: 1px solid #d9d9de;
+  padding: 20px 20px;
+}
+
+.progress {
+  margin-right: 10px;
+  margin-left: 10px;
+}
+
+.progress-bar {
+  background-color: #51a33d !important;
+  background-image: none !important;
+}
+
+.text-bold {
+  font-weight: bold;
+}
+
+.thumbnail-text {
+  font-size: 1.5em;
+  font-weight: bold;
+  margin-bottom: 1px !important;
+}
+
+.circle-image {
+  border-radius: 50% !important;
+}
+
 @media screen and (max-width: 767px) {
 }
 

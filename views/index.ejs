@@ -22,7 +22,8 @@
 
 <div id="section-2"  class="row">
   <div class="container">
-  <h2>Featured projects</h2>
+  <h1 class="text-color-1">Featured projects</h1>
+  <br/>
   <% if (projects.length !== 0) { %>
     <% for(var i in projects) { %>
       <% if( ((i+1) % 3) === 1){ %>
@@ -31,28 +32,31 @@
     
       <div class="col-lg-4">
         <div class="thumbnail-frame">
-          <img class="img-circle" src="<%= projects[i].image_path %>" alt="<%= projects[i].name %>" width="160" height="160">
-          <h3 class="text-bold"><%= projects[i].name %></h3>
-          <div class="text-left">
-            <p class="text-md text-color-2"><span class="glyphicon glyphicon-tags" aria-hidden="true"></span> <%= projects[i].category %></p>
-          </div>
-          <div class="progress">
-              <div class="progress-bar" role="progressbar" aria-valuenow="<%= projects[i].percent %>" aria-valuemin="0" aria-valuemax="100" style="min-width: 2em; width: <%= projects[i].percent %>%;">
-                <%= projects[i].percent %>%
+          <center>
+            <img class="circle-image" src="<%= projects[i].image_path %>" alt="<%= projects[i].name %>" width="180" height="180">
+          
+            <h3 class="text-bold"><%= projects[i].name %></h3>
+            <div class="text-left">
+              <p class="text-md text-color-2"><span class="glyphicon glyphicon-tags" aria-hidden="true"></span> <%= projects[i].category %></p>
+            </div>
+            <div class="progress">
+                <div class="progress-bar" role="progressbar" aria-valuenow="<%= projects[i].progress %>" aria-valuemin="0" aria-valuemax="100" style="min-width: 2em; width: <%= projects[i].progress %>%;">
+                  <%= projects[i].progress %>%
+                </div>
+              </div>
+            <div class="row">
+              <div class="col-md-6 col-xs-6 pull-left">
+                <p class="text-color-5 thumbnail-text">₱<%= projects[i].total %></p>
+                <p>raised</p>
+              </div>
+              <div class="col-md-6 col-xs-6 pull-right">
+                <p class="text-color-5 thumbnail-text"><%= projects[i].days_left %></p>
+                <p>days to go</p>
               </div>
             </div>
-          <div class="row">
-            <div class="col-md-6 col-xs-6 pull-left">
-              <p class="text-color-5 thumbnail-text">₱<%= projects[i].total %></p>
-              <p>raised</p>
-            </div>
-            <div class="col-md-6 col-xs-6 pull-right">
-              <p class="text-color-5 thumbnail-text"><%= projects[i].days_left %></p>
-              <p>days to go</p>
-            </div>
-          </div>
-          <br>
-          <p><a class="btn btn-2" href="/projects/<%= projects[i].id %>" role="button">Support this project</a></p>
+            <br>
+            <p><a class="btn btn-1" href="/projects/<%= projects[i].id %>" role="button">SUPPORT THIS PROJECT</a></p>
+          </center>
         </div>
       </div>
     
