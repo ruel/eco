@@ -1,3 +1,5 @@
+var moment = require('moment');
+
 module.exports = {
 
   tableName: 'projects',
@@ -37,11 +39,6 @@ module.exports = {
       required: false
     },
 
-    total: {
-      type: 'float',
-      defaultsTo: 0.0
-    },
-
     owner: {
       model: 'user'
     },
@@ -54,6 +51,8 @@ module.exports = {
   },
 
   list: function(where, pagination, sort, callback) {
+    var projects = [];
+
     Project.count({
       where: where
     }, function(err, count) {
@@ -65,9 +64,29 @@ module.exports = {
       .paginate(pagination)
       .sort(sort)
       .populate('owner')
-      .exec(function(err, projects) {
+      .exec(function(err, tmpProjects) {
+        if (err) return callback(err);
 
-        return callback(err, projects, count);
+        async.each(tmpProjects, function(project, eachCallback) {
+
+          Fund.sum(project.id, function(err, total) {
+            if (err) return eachCallback(err);
+            project.total = total || 0;
+
+            var start = moment(new Date());
+            var end = moment((new Date()).setDate(project.createdAt.getDate() + project.duration));
+
+            project.days_left = end.diff(start, 'days');
+            project.progress = Math.round((project.total / project.goal) * 100);
+
+            projects.push(project);
+            eachCallback();
+          });
+          
+        }, function(err) {
+          if (err) return callback(err);
+          return callback(null, projects, count);
+        });
       });
     });
   },
