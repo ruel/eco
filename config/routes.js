@@ -1,6 +1,9 @@
 module.exports.routes = {
-  '/': 'Home.index',
+  'get /': 'Home.index',
 
-  '/auth/facebook': 'Auth.facebookLogin',
-  '/auth/facebook/callback': 'Auth.facebookCallback',
+  'get /auth/register': 'Auth.getRegister',
+  'post /auth/register': 'Auth.postRegister',
+
+  'get /auth/facebook': 'Auth.facebookLogin',
+  'get /auth/facebook/callback': 'Auth.facebookCallback',
 };
