@@ -21,7 +21,6 @@
     <div class="row">
       <% if(user.supported.length === 0) { %>
         <center>
-          <img src="/images/sad.png" height="100px">
           <h4 class="text-color-2">Oops, you haven't supported any green projects yet.</h4>
           <a class="btn btn-lg btn-1" type="button" href="/projects/browse">SUPPORT A PROJECT</a><br>
         </center>
@@ -43,6 +42,50 @@
                   <td><%= user.supported[i].name %></td>
                   <td><%= user.supported[i].category.name %></td>
                   <td><a href="/projects/<%= user.supported[i].id %>">View Details</a></td>
+                </tr>
+                <% } %>
+              </tbody>
+            </table>
+        </div>
+      <% } %>
+    </div>
+  </div>
+  <br>
+  <div class="content-frame">
+    <div class="row">
+      <div class="col-md-6 col-xs-6">
+        <h3 class="text-color-4 text-left">Projects started (<%= user.projects.length %>)</h3>
+      </div>
+      <div class="col-md-6 col-xs-6">
+        <% if(user.projects.length !== 0) { %>
+        <a class="btn btn-2 pull-right margin-t" type="button" href="/projects/browse">Browse more projects</a><br>
+        <% } %>
+      </div>
+    </div>
+    <div class="row">
+      <% if(user.projects.length === 0) { %>
+        <center>
+          <h4 class="text-color-2">Have an idea that can slow down climate change? We'll help you out!</h4>
+          <a class="btn btn-lg btn-1" type="button" href="/projects/browse">START A PROJECT</a><br>
+          </centeradd
+      <% } else { %>
+        <div class="table-container">
+          <table class="table table-hover">
+              <thead>
+                <tr>
+                  <th>#</th>
+                  <th>Project Name</th>
+                  <th>Category</th>
+                  <th>Details</th>
+                </tr>
+              </thead>
+              <tbody>
+                <% for (var j in user.projects) { %>
+                <tr>
+                  <td><%= parseInt(j) + 1 %></td>
+                  <td><%= user.projects[j].name %></td>
+                  <td><%= user.projects[j].category %></td>
+                  <td><a href="/projects/<%= user.projects[j].id %>">View Details</a></td>
                 </tr>
                 <% } %>
               </tbody>
