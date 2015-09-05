@@ -1,3 +1,5 @@
+var passport = require('passport');
+
 module.exports = {
 
   getRegister: function(req, res) {
