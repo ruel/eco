@@ -48,6 +48,11 @@ module.exports = {
       via: 'project'
     },
 
+    rewards: {
+      collection: 'reward',
+      via: 'project'
+    },
+
     category: {
       model: 'category'
     }
@@ -69,6 +74,7 @@ module.exports = {
       .sort(sort)
       .populate('owner')
       .populate('category')
+      .populate('rewards')
       .exec(function(err, tmpProjects) {
         if (err) return callback(err);
 

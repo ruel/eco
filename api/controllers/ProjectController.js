@@ -98,6 +98,7 @@ module.exports = {
 
       res.view('project', {
         project: projects[0],
+        rewards: rewards,
         thankyou: req.query.thankyou
       });
     });
