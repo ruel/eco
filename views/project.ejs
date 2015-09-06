@@ -55,6 +55,15 @@
         <br>
         <p><a class="btn btn-1 btn-lg" data-toggle="modal" data-target="#supportModal" role="button">SUPPORT THIS PROJECT</a></p>
       </div>
+      <br>
+      <% for ( var i in project.rewards ) { %>
+        <div class="content-frame">
+          <h2 class="text-color-b"><%= parseInt(i) + 1 %></h2>
+          <p class="text-color-1">From ₱<%= project.rewards[i].start_amount %> to ₱<%= project.rewards[i+1].start_amount - 1 %></p>
+          <hr>
+          <p class="text-color-lg"><%= project.rewards[i].details %></p>
+        </div>
+      <% } %>
     </div>
   </div>
 </div>
