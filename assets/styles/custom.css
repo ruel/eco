@@ -399,7 +399,7 @@ a.btn-trans-blk  {
 
 @media screen and (max-width: 767px) {
   .details-image {
-    width: 720px;
+    width: 100% !important;
     height: 500px;
     object-fit: cover;
   }
@@ -430,3 +430,24 @@ input.search-input:active {
   border-bottom: 1px solid #d9d9de !important;
 }
 
+.cat-c {
+  margin-top: 30px;
+}
+
+.p-desc {
+  line-height: 1.2em;
+}
+
+.p-content {
+  font-size: 1.1em;
+  line-height: 1.6em;
+}
+
+.cat,
+.cat:hover,
+.cat:active {
+  text-decoration: none;
+  background-color: #51a33d;
+  color: white;
+  padding: 10px;
+}
