@@ -38,7 +38,7 @@
       <br>
       <div class="content-frame">
         <h2 class="text-color-b p-desc"><%= project.description %></h2>
-        <p class="cat-c text-color-1"><a class="cat" href="/projects?category=<% project.category.id %>"><span class="glyphicon glyphicon-tags" aria-hidden="true"></span>&nbsp; 
+        <p class="cat-c text-color-1"><a class="cat" href="/projects?category=<%= project.category.id %>"><span class="glyphicon glyphicon-tags" aria-hidden="true"></span>&nbsp; 
           <%= project.category.name %></a></p>
         <hr>
         <p class="text-color-lg p-content"><%= project.content %></p>
