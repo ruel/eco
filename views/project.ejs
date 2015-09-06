@@ -3,7 +3,7 @@
 <div class="container page">
   <center>
     <h1 class="text-color-1"><%= project.name %></h1>
-    <p>by <span class="text-color-1"><%= project.owner.first_name %> <%= project.owner.last_name %></span><p>
+    <p>by <a href="/users/<%= project.owner.id %>"><span class="text-color-1"><%= project.owner.first_name %> <%= project.owner.last_name %></span><p>
   </center>
 </div>
 <br />
@@ -56,14 +56,15 @@
         <p><a class="btn btn-1 btn-lg" data-toggle="modal" data-target="#supportModal" role="button">SUPPORT THIS PROJECT</a></p>
       </div>
       <br>
-      <% for ( var i in project.rewards ) { %>
+      <h2 class="text-color-b">Rewards</h2>
+      <% project.rewards.forEach(function(rewards) {%>
         <div class="content-frame">
-          <h2 class="text-color-b"><%= parseInt(i) + 1 %></h2>
-          <p class="text-color-1">From ₱<%= project.rewards[i].start_amount %> to ₱<%= project.rewards[i+1].start_amount - 1 %></p>
+          <h3 class="text-color-1">Pledge from ₱<%= rewards.start_amount %></h3>
           <hr>
-          <p class="text-color-lg"><%= project.rewards[i].details %></p>
+          <p class="text-color-lg"><%= rewards.details %></p>
         </div>
-      <% } %>
+        <br>
+      <% }); %>
     </div>
   </div>
 </div>
