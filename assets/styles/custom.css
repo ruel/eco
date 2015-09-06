@@ -389,12 +389,12 @@ a.btn-trans-blk  {
 
 .input-2 {
   height: 2.6em !important;
-  width: 500px;
+  width: 500px !important; 
   border: 1px solid #51a33d !important;
   color: #51a33d !important;
   font-weight: 300;
   margin-left: -15px;
-  padding: 20px 0px;
+  padding: 10px 10px;
 }
 
 @media screen and (max-width: 767px) {
