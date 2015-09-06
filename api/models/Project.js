@@ -81,6 +81,7 @@ module.exports = {
       .sort(sort)
       .populate('owner')
       .populate('category')
+      .populate('funds')
       .populate('rewards')
       .exec(function(err, tmpProjects) {
         if (err) return callback(err);
