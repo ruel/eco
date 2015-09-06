@@ -443,6 +443,14 @@ input.amount-input:active {
   width: 100%;
 }
 
+.nostyle,
+.nostyle:hover,
+.nostyle:active,
+.nostyle:visited {
+  color: #51a33d;
+  text-decoration: none;
+}
+
 .cat-c {
   margin-top: 30px;
 }

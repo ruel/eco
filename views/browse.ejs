@@ -42,8 +42,10 @@
             <a href="/projects/<%= projects[i].id %>"><img class="full-image" src="<%= projects[i].image_path %>" alt="<%= projects[i].name %>"></a>
           
             <div class="thumbnail-content">
-              <h1 class="text-color-1"><%= projects[i].name %></h1>
-              <h4 class="text-color-5"><%= projects[i].description %></h4>
+              <a class="nostyle" href="/projects/<%= projects[i].id %>">
+                <h1 class="text-color-1"><%= projects[i].name %></h1>
+                <h4 class="text-color-5"><%= projects[i].description %></h4>
+              </a>
             </div>
             <div class="highlight-line">
               <div class="row center">
