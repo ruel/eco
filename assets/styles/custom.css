@@ -72,6 +72,10 @@ h1, h2, h3, h4, h5, h6 {
   padding: 10px 0px;
 }
 
+.icon-bar {
+  background-color: #666;
+}
+
 .btn-1 {
   color: white;
   background-color: #51a33d;
@@ -375,11 +379,27 @@ a.btn-trans-blk  {
   object-fit: cover;
 }
 
+.mobile-off {
+  display: block;
+}
+
+.mobile-on {
+  display: none;
+}
+
 @media screen and (max-width: 767px) {
   .details-image {
     width: 720px;
     height: 500px;
     object-fit: cover;
+  }
+  
+  .mobile-off {
+    display: none;
+  }
+
+  .mobile-on {
+    display: block;
   }
 }
 
