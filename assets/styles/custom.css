@@ -430,6 +430,19 @@ input.search-input:active {
   border-bottom: 1px solid #d9d9de !important;
 }
 
+input.amount-input,
+input.amount-input:hover,
+input.amount-input:focus
+input.amount-input:active {
+  background-color: transparent;
+  padding: 15px;
+  border: 0 !important;
+  outline: none;
+  outline-offset: 0;
+  border-bottom: 1px solid #d9d9de !important;
+  width: 100%;
+}
+
 .cat-c {
   margin-top: 30px;
 }
