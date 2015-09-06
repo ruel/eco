@@ -121,6 +121,18 @@ module.exports = {
         return res.serverError();
       }
 
+      // Paypal Sandbox is acting up, so we have to temporarily do this.
+      return Fund.create({
+        project: project.id,
+        user: req.user.id,
+        amount: amount
+      }, function(err) {
+        if (err) return sails.log.error(err);
+        return res.redirect('/projects/' + project.id + '?thankyou=true');
+      });
+
+      // Unreachable code below. Will continue testing soon.
+
       var payment = {
         intent: 'sale',
         payer: {
