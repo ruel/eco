@@ -59,6 +59,13 @@ module.exports = {
 
   },
 
+  beforeCreate: function(values, callback) {
+    if (values.image_path) return callback(null, values);
+
+    values.image_path = '/images/rand/' + (Math.floor(Math.random() * 4) + 1) + '.jpg';
+    callback(null, values);
+  },
+
   list: function(where, pagination, sort, callback) {
     var projects = [];
 
