@@ -389,7 +389,7 @@ a.btn-trans-blk  {
 
 .input-2 {
   height: 2.6em !important;
-  width: 500px !important; 
+  width: 300px !important; 
   border: 1px solid #51a33d !important;
   color: #51a33d !important;
   font-weight: 300;
@@ -415,5 +415,18 @@ a.btn-trans-blk  {
   .input-2 {
     width: 100% !important;
   }
+}
+
+
+input.search-input,
+input.search-input:hover,
+input.search-input:focus
+input.search-input:active {
+  background-color: transparent;
+  padding: 15px;
+  border: 0 !important;
+  outline: none;
+  outline-offset: 0;
+  border-bottom: 1px solid #d9d9de !important;
 }
 

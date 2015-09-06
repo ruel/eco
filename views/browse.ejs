@@ -1,10 +1,12 @@
 <%- partial('partials/header') %>
 
+<div class="container">
 <div id="browse-section" class="row">
   <div class="container">
     <div class="row">
-      <div class="col-md-9 col-xs-7">
+      <div class="col-md-9 col-xs-12">
         <h1 class="text-color-1">Projects for the future</h1>
+        <br />
       </div>
       <div class="col-md-2 mobile-off pull-right">
         <a class="btn btn-trans-blk margin-tb btn-lg" href="/projects/add" role="button">Start a Project</a>
@@ -15,9 +17,9 @@
         <form class="form-inline" role="form" action="/projects" method="get">
           <div class="col-xs-12">
             <div class="form-group">
-              <input type="text" class="form-control input-2" placeholder="Search for name, description and category" name="keyword">
+              <input type="text" class="search-input input-2" placeholder="Looking for something?" name="keyword">
+              <button type="submit" class="hidden btn btn-1"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
             </div>
-            <button type="submit" class="btn btn-1"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
           </div>
         </form>
       </div>
@@ -79,6 +81,7 @@
 </div>
 <div class="row">
   <br />
+</div>
 </div>
 
 <%- partial('partials/footer') %>
