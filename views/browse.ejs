@@ -21,7 +21,7 @@
     
       <div class="col-lg-4">
         <div class="top-cat center">
-          <p><%= projects[i].category.name %></p>
+          <a href="/projects?category=<%= projects[i].category.id %>"><p><%= projects[i].category.name %></p></a>
         </div>
         <div class="thumbnail-frame" data-id="<%= projects[i].id %>">
           <center>

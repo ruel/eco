@@ -337,6 +337,12 @@ a.btn-trans-blk  {
   background-color: white;
   border: 1px solid #d9d9de;
   border-top-width: 0px;
+  margin-bottom: 20px;
+}
+
+.top-cat a {
+  color: white;
+  text-decoration: none;
 }
 
 .progress {

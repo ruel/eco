@@ -38,7 +38,14 @@ module.exports = {
   browse: function(req, res) {
     var query = {};
     var keyword = req.query.keyword;
+    var category = req.query.category;
 
+    if (category) {
+      query = {
+        category: category
+      };
+    }
+    
     if (keyword) {
       query = {
         or: [
